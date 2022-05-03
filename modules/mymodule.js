@@ -10,15 +10,11 @@ function printFilesInDirectory(dir, ext, callback) {
             return callback(error)
         }
 
-        let filteredFiles = []
-
-        files.forEach(function (file) {
-            if (path.extname(file) === ('.' + ext)) {
-                filteredFiles.push(file)
-            }
+        files = files.filter(function (file) {
+            return path.extname(file) === '.' + ext
         })
 
-        callback(null, filteredFiles)
+        callback(null, files)
     }
 
     fs.readdir(dir, printFilesList)

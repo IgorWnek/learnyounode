@@ -1,6 +1,5 @@
 'use strict'
 const myModule = require('./modules/mymodule')
-const path = require("path");
 
 const dir = process.argv[2]
 const fileExtension = process.argv[3]
