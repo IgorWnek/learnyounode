@@ -1,12 +1,7 @@
-let arguments = process.argv
 let argumentsCounter = 0
 
-arguments.map((value, index) => {
-    if (index < 2) {
-        return;
-    }
-
-    argumentsCounter += parseInt(value)
-})
+for (let i = 2; i < process.argv.length; i++) {
+    argumentsCounter += Number(process.argv[i])
+}
 
 console.log(argumentsCounter)
