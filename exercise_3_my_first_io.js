@@ -1,6 +1,7 @@
-let fs = require('fs')
+'use strict'
+const fs = require('fs')
 
-const fileBuffer = fs.readFileSync(process.argv[2])
-const newLinesNumber = fileBuffer.toString.match(/(\\n)|(\n)/g).length
+const contents = fs.readFileSync(process.argv[2])
+const newLinesNumber = contents.toString().split('\n').length - 1
 
 console.log(newLinesNumber)
